@@ -26,15 +26,6 @@ collision = -1
 
 listOfBlocks = [block]
 
-
-
-
-
-
-
-
-
-
 while True: #game loop
 
     screen.fill((0,0,100))     #background

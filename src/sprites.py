@@ -22,10 +22,7 @@ class block:
         else:
             self.rect.y = HEIGHT -40
         
-        
-        
-        
-
+    
     def blit(self,screen):
         screen.blit(self.img,[self.rect.x,self.rect.y])
     
