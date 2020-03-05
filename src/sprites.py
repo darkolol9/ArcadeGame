@@ -1,20 +1,29 @@
 import pygame
 
+HEIGHT = 700
+
+
 
 class block:
-    def __init__(self,h,w):
+    def __init__(self,h,w,color):
         self.img = pygame.Surface([h,w])
-        self.img.fill((255,0,0))
+        self.img.fill(color)
+        self.color = color
         self.rect = self.img.get_rect()
         self.rect.y = 0
         self.rect.x = 100
+        self.speed = 3
 
     def update(self):
         self.pos = pygame.mouse.get_pos()
-        self.rect.x = self.pos[0]
-        if self.rect.y > 700:
-            self.rect.y = 0
-        self.rect.y +=1
+        if self.rect.y < HEIGHT- 40:
+            self.rect.x = self.pos[0]
+            self.rect.y += self.speed
+        else:
+            self.rect.y = HEIGHT -40
+        
+        
+        
         
 
     def blit(self,screen):
